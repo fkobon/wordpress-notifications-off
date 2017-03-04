@@ -1,5 +1,11 @@
 jQuery(document).ready( function($){   
 
+	// Initialize button switcher
+	$("#switch-button").switchButton({
+		width: 100,
+		height: 40,
+		button_width: 70
+	});
 	// Switch on/off the debugging option
 	jQuery.ajax({
 			type : "post",
