@@ -30,13 +30,12 @@ Class DebugOn{
 		add_action( "admin_menu", array($DebugOnMenu, 'create_menu') );
 	}
 	
-	// Switch option via Ajax
+	// Switch function triggered through html
 	public function do_switch(){
-		if(is_admin()){
-			
-			// 1. Sanitize and check data
+		if(is_admin() && current_user_can('administrator')){
 
-			// 2. Check if the option is already set
+			// 1. Check the debug status
+			$debug_status = WP_DEBUG;
 
 			// 3. Save option to wordpress
 		}
