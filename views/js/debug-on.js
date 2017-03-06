@@ -6,6 +6,11 @@ jQuery(document).ready( function($){
 		height: 40,
 		button_width: 70
 	});
+
+	// onclick Listener
+	$('.switch-button-background').click(function(){
+		alert('switcher clicked');
+	});
 	// Switch on/off the debugging option
 	jQuery.ajax({
 			type : "post",
