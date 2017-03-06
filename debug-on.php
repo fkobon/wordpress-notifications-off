@@ -44,9 +44,11 @@ Class DebugOn{
 	// enqueue scripts 
 	public function do_enqueue_scripts() {
 
-		wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
-		wp_enqueue_script('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js', array('jquery'), null, true );
-		wp_enqueue_script('switch-button', plugin_dir_url( __FILE__ ). 'views/js/jquery.switchButton.js', array( 'jquery' ), '1.0.0', true );;
+		// first, check to see if jquery-ui is already loaded 
+		if( !wp_script_is('jquery-ui') ) { 
+		    wp_enqueue_script( 'jquery-ui' , 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js' );
+		}  
+		wp_enqueue_script('switch-button', plugin_dir_url( __FILE__ ). 'views/js/jquery.switchButton.js', array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script('do-script', plugin_dir_url( __FILE__ ). 'views/js/debug-on.js', array('jquery'), null, true );
 
 		wp_localize_script('do-script','ajax_var', array(
@@ -58,7 +60,6 @@ Class DebugOn{
 	// enqueue styles 
 	public function do_enqueue_styles() {
 		wp_enqueue_style('do-style', plugin_dir_url( __FILE__ ). 'views/css/debug-on.css');
-		wp_enqueue_style('do-font-awesome', plugin_dir_url( __FILE__ ). 'views/css/font-awesome.min.css');
 	}
 
 }
