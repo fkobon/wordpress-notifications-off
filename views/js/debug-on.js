@@ -10,6 +10,7 @@ jQuery(document).ready( function($){
 	// onclick Listener
 	$('.switch-button-background').click(function(){
 		alert('switcher clicked');
+		location.reload(); // force page reloading
 	});
 	// Switch on/off the debugging option
 	jQuery.ajax({
