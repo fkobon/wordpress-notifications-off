@@ -10,7 +10,7 @@ jQuery(document).ready( function($){
 	// onclick Listener
 	$('.switch-button-background').click(function(){
 		
-		$nonce = wp_create_nonce( "debug-nonce" );
+		$nonce = '<?php echo wp_create_nonce( "debug-nonce" ); ?>';
 
 		// Switch debugging status via Ajax
 		jQuery.ajax({

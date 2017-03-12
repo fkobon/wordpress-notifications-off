@@ -34,10 +34,14 @@ Class DebugOn{
 	public function do_switch(){
 		if(is_admin() && current_user_can('administrator')){
 
-			// 1. Check the debug status
-			$debug_status = WP_DEBUG;
+			// strengthen security by checking the nonce
+			if check_ajax_referer( 'debug-nonce', 'nonce' ){
+				// 1. Check the debug status
+				$debug_status = WP_DEBUG;
 
-			// 3. Save option to wordpress
+				// 3. Save option to wordpress		
+			}
+
 		}
 	}
 	// enqueue scripts 
