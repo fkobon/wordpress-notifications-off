@@ -9,19 +9,23 @@ jQuery(document).ready( function($){
 
 	// onclick Listener
 	$('.switch-button-background').click(function(){
-		alert('switcher clicked');
-		location.reload(); // force page reloading
-	});
-	// Switch on/off the debugging option
-	jQuery.ajax({
+		
+		$nonce = wp_create_nonce( "debug-nonce" );
+
+		// Switch debugging status via Ajax
+		jQuery.ajax({
 			type : "post",
 			dataType : "json",
 			url : ajax_var.url,
-			data : {action: "do_switch"},
+			data : {action: "do_switch", nonce:nonce},
 
 			success: function(response) {
 				var domain_list = response.debug_status;
+				location.reload(); // force page reloading
 			}
 		})  
+		
+	});
+
 });
 
