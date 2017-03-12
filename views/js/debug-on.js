@@ -20,7 +20,6 @@ jQuery(document).ready( function($){
 			data : {action: "do_switch", nonce:nonce},
 
 			success: function(response) {
-				var domain_list = response.debug_status;
 				location.reload(); // force page reloading
 			}
 		})  

@@ -34,6 +34,7 @@ Class DebugOn{
 	public function do_switch(){
 		if(is_admin() && current_user_can('administrator')){
 
+			$response = $array();
 			// strengthen security by checking the nonce
 			if check_ajax_referer( 'debug-nonce', 'nonce' ){
 				// Check the debug status
@@ -47,6 +48,9 @@ Class DebugOn{
 				}
 
 			}
+
+			echo json_encode($response);
+				exit;
 
 		}
 	}
