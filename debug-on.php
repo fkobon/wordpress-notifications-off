@@ -36,10 +36,16 @@ Class DebugOn{
 
 			// strengthen security by checking the nonce
 			if check_ajax_referer( 'debug-nonce', 'nonce' ){
-				// 1. Check the debug status
+				// Check the debug status
 				$debug_status = WP_DEBUG;
 
-				// 3. Save option to wordpress		
+				// change the debug status
+				if($debug_status){
+					define('WP_DEBUG', false);
+				}else if (!$debug_status){
+					define('WP_DEBUG', true);
+				}
+
 			}
 
 		}
