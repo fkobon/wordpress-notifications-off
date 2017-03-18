@@ -32,26 +32,31 @@ Class DebugOn{
 	
 	// Switch function triggered through html
 	public function do_switch(){
+		add_action('admin_init', array($this , 'set_debug_status_on');
 		if(is_admin() && current_user_can('administrator')){
 
 			$response = $array();
 			// strengthen security by checking the nonce
-			if check_ajax_referer( 'debug-nonce', 'nonce' ){
+			//if (check_ajax_referer( 'debug-nonce', 'nonce' )){
 				// Check the debug status
 				$debug_status = WP_DEBUG;
 
 				// change the debug status
 				if($debug_status){
-					define('WP_DEBUG', false);
+					set_debug_status_status(false);
 				}else if (!$debug_status){
-					define('WP_DEBUG', true);
+					set_debug_status_status(true);
 				}
 
-			}
+			//}
+				
+			$data = array("debug_status" => $debug_status); 
 
-			echo json_encode($response);
-				exit;
+			header( "Content-Type: application/json" );
+			echo json_encode($data);
 
+			// Always die in functions echoing Ajax content die();
+			die();
 		}
 	}
 	// enqueue scripts 
@@ -73,6 +78,20 @@ Class DebugOn{
 	// enqueue styles 
 	public function do_enqueue_styles() {
 		wp_enqueue_style('do-style', plugin_dir_url( __FILE__ ). 'views/css/debug-on.css');
+	}
+
+	// debug status setters
+	public function set_debug_status($status){
+		if(is_bool($status)){
+			
+			if($status){
+				
+				// add_option( 'myhack_extraction_length', '255', '', 'yes' );  
+
+			}else{
+
+			}
+		}
 	}
 
 }
