@@ -7,13 +7,13 @@ Class DebugOnMenu{
 	}
 
 	public function create_menu() {
-		add_menu_page('Debug On Plugin','Debug On','administrator', 'menu-domain-home','','dashicons-clipboard');
+		add_menu_page('Debug On Plugin','Debug On','administrator', 'menu-debug-on-home','','dashicons-clipboard');
 
-		add_submenu_page( 'menu-domain-home', 'Settings', 'Domain Monitor settings',
-			'manage_options', 'menu-domain-home', array( $this, "menu_domain_home"));
+		add_submenu_page( 'menu-debug-on-home', 'Settings', 'Debug status settings',
+			'manage_options', 'menu-debug-on-home', array( $this, "menu_debug_on_home"));
 	}
 
-	public function menu_domain_home() {
-		include plugin_dir_path( __FILE__ ) .'views/domain-menu-home.php';
+	public function menu_debug_on_home() {
+		include plugin_dir_path( __FILE__ ) .'views/debug-on-menu-home.php';
 	}
 }

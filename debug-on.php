@@ -44,6 +44,8 @@ Class DebugOn{
 	// enqueue scripts 
 	public function do_enqueue_scripts() {
 		wp_enqueue_script('do-script', plugin_dir_url( __FILE__ ). 'views/js/debug-on.js', array('jquery'), null, true );
+		wp_enqueue_script('switch-button', plugin_dir_url( __FILE__ ). 'views/js/jquery.switchButton', array('jquery'), null, true );
+		wp_enqueue_script('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js');
 
 		wp_localize_script('do-script','ajax_var', array(
 			'url' => admin_url('admin-ajax.php'),

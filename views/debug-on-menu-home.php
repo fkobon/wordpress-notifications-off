@@ -1,11 +1,14 @@
 <div class="debug-on-wrapper">
-	<h1>Add a new domain to monitor</h1>
+	<h1>Manage debugging status</h1>
+		<div class="switch-wrapper">
+			<div id="switch-button"></div>
+			<script>
+				$("#switch-button").switchButton({
+					width: 100,
+					height: 40,
+					button_width: 70
+				});
+			</script>
 
-	<form method='post'>
-		<input class="domain-url" placeholder="http://yourdomain.com">
-		<a href="#" class="add-domain"><i class="fa fa-plus"></i></a>
-	<?php //submit_button('Bulk Create Categories'); ?>
-	<ul class="domain-list">
-		
-	</ul>
-</form>
+		</div>
+</div>
