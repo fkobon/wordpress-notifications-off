@@ -6,10 +6,21 @@
 		</div>
 </div>
 <script type="text/javascript">
-	// Initialize button switcher
-	$("#switch-button").switchButton({
-		width: 100,
-		height: 40,
-		button_width: 70
+	jQuery(document).ready( function($){   
+
+		// Initialize button switcher
+		$("#switch-button").switchButton({
+			width: 100,
+			height: 40,
+			button_width: 70,
+		
+		<?php if($debug_status ==='activated'){
+				echo 'checked: true';
+			}else{
+				echo 'checked: false';
+			}
+		?>
+		});
+
 	});
 </script>
