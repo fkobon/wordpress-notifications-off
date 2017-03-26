@@ -21,6 +21,7 @@ Class DebugOn{
 	public function __construct() {
 		add_action( "admin_menu", array( $this, "do_enqueue_scripts") );
 		add_action( "admin_menu", array( $this, "do_enqueue_styles") );
+		add_action( "admin_head", array( $this, "do_hide_notifications") );
 
 		add_action("wp_ajax_do_switch", array( $this, "do_switch")) ;
 
@@ -93,7 +94,25 @@ Class DebugOn{
 	// enqueue styles 
 	public function do_enqueue_styles() {
 		wp_enqueue_style('do-style', plugin_dir_url( __FILE__ ). 'views/css/debug-on.css');
-	}	
+	}
+
+
+	// debug status get to be hooked into 
+	public function do_hide_notifications(){
+		//if(! current_user_can('update_core')){return;}
+	
+		
+		$debug_status = sanitize_text_field(get_option( 'do_debug_status' ));
+		
+		if( $debug_status === 'activated' ){
+			
+			if (current_user_can('update_core')) {
+		        remove_action( 'admin_notices', 'update_nag', 3 );
+				remove_action( 'network_admin_notices', 'update_nag', 3 );
+    		}
+		}
+		
+	}		
 
 }
 
