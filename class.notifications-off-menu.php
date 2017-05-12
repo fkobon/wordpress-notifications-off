@@ -1,5 +1,5 @@
 <?
-Class DebugOnMenu{
+Class NotificationsOffMenu{
 	
 	public function __construct() {
 		// empty constructor
@@ -7,13 +7,13 @@ Class DebugOnMenu{
 	}
 
 	public function create_menu() {
-		add_menu_page('Debug On Plugin','Debug On','administrator', 'menu-debug-on-home','','dashicons-clipboard');
+		add_menu_page('Notifications Off Plugin','Notifications Off','administrator', 'menu-notifications-off-home','','dashicons-clipboard');
 
-		add_submenu_page( 'menu-debug-on-home', 'Settings', 'Debug status settings',
-			'manage_options', 'menu-debug-on-home', array( $this, "menu_debug_on_home"));
+		add_submenu_page( 'menu-notifications-off-home', 'Settings', 'Notifications status settings',
+			'manage_options', 'menu-notifications-off-home', array( $this, "menu_notifications_off_home"));
 	}
 
-	public function menu_debug_on_home() {
-		include plugin_dir_path( __FILE__ ) .'views/debug-on-menu-home.php';
+	public function menu_notifications_off_home() {
+		include plugin_dir_path( __FILE__ ) .'views/menu-home.php';
 	}
 }

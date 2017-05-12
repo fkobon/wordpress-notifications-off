@@ -1,6 +1,6 @@
-<div class="debug-on-wrapper">
-	<?php $debug_status = get_option( 'do_debug_status' ); ?>
-	<h1>Notifications are <?php echo $debug_status;?></h1>
+<div class="notifications-off-wrapper">
+	<?php $notifications_status = get_option( 'no_notifications_status' ); ?>
+	<h1>Notifications are <?php echo $notifications_status;?></h1>
 		<div class="switch-wrapper">
 			<div id="switch-button"></div>
 		</div>
@@ -14,7 +14,7 @@
 			height: 40,
 			button_width: 70,
 		
-		<?php if($debug_status ==='activated'){
+		<?php if($notifications_status ==='activated'){
 				echo 'checked: true';
 			}else{
 				echo 'checked: false';
