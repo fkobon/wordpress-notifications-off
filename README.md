@@ -1,9 +1,9 @@
 # Notifications Off
 A WordPress plugin tool for hiding dashboard notifications.
 
+## Description
+This plugin allows you to easily turn off and on notifications in WordPress dashboard. Its mini interface makes it dead-simple to hide or show notifications by simply switching a button option.
 [![notifications_off_screenshot.png](https://s6.postimg.org/dhc5anyzl/bastille_homepage_yellow.png)](https://postimg.org/image/3wsins9nh/)
-
-
 
 ## Installation
 
