@@ -24,6 +24,7 @@ Class NotificationsOff{
 		add_action( "admin_head", array( $this, "no_hide_notifications") );
 
 		add_action("wp_ajax_no_switch", array( $this, "no_switch")) ;
+		register_uninstall_hook( __FILE__, array($this, "no_uninstall" ));
 
 		
 		// setting up the menu
@@ -40,18 +41,14 @@ Class NotificationsOff{
 			//$data = array();
 			// strengthen security by checking the nonce
 			//if (check_ajax_referer( 'notifications-nonce', 'nonce' )){
-				// Check the notifications status
-				if (FALSE === get_option('no_notifications_status')) {
-					add_option('no_notifications_status', 'disactivated');
-				}
 
 				$notifications_status = get_option( 'no_notifications_status' );
 
 
-				if( $notifications_status === 'activated' ){
-					update_option( 'no_notifications_status', 'disactivated'); 
-				}else if ( $notifications_status === 'disactivated' ){
-					update_option( 'no_notifications_status', 'activated'); 
+				if( $notifications_status === 'on' ){
+					update_option( 'no_notifications_status', 'off'); 
+				}else if ( $notifications_status === 'off' ){
+					update_option( 'no_notifications_status', 'on'); 
 				}
 
 				//if(is_bool($status) === true){
@@ -104,14 +101,26 @@ Class NotificationsOff{
 		
 		$notifications_status = sanitize_text_field(get_option( 'no_notifications_status' ));
 		
-		if( $notifications_status === 'activated' ){
+		if( $notifications_status === 'off' ){
 			
 			if (current_user_can('update_core')) {
 		        remove_action( 'admin_notices', 'update_nag', 3 );
 				remove_action( 'network_admin_notices', 'update_nag', 3 );
     		}
+		}elseif ($notifications_status === 'on') {
+			// do nothing
+		}else{
+			delete_option( 'no_notifications_status' );
 		}
-		
+
+		// Set the inital value if no option is set
+		if (FALSE === get_option('no_notifications_status')) {
+			add_option('no_notifications_status', 'off');
+		}
+	}
+
+	public function no_uninstall(){
+		delete_option( 'no_notifications_status' );
 	}		
 
 }

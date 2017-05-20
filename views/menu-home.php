@@ -14,7 +14,7 @@
 			height: 40,
 			button_width: 70,
 		
-		<?php if($notifications_status ==='activated'){
+		<?php if($notifications_status ==='on'){
 				echo 'checked: true';
 			}else{
 				echo 'checked: false';
