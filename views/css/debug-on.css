@@ -1,0 +1,52 @@
+.debug-on-wrapper form {
+	max-width:400px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.debug-on-wrapper form input{
+	padding:9px 22px;
+	border:solid 1px #e2e2e2;
+	flex:1;
+	margin-right: 10px;
+}
+
+.debug-on-wrapper form input:focus{
+	border:solid 1px #FF8000;
+	outline:none;
+}
+.debug-on-wrapper a.add-domain{
+	background: #FF8000;
+	color: #FFF;
+	border:none;
+	padding:9px 22px;
+	border:solid 1px #e2e2e2;
+	display: inline-block;
+	text-decoration: none;
+}
+.debug-on-wrapper a.add-domain:hover{
+	background: #FF9900;
+	color: #FFF;
+}
+.debug-on-wrapper a.add-domain i{
+    font-size: 1.4em;
+    padding: 2px 4px;
+}
+
+.debug-on-wrapper .domain-list {
+	width: 100%;
+}
+.debug-on-wrapper .domain-list li{
+	padding: 8px;
+	color: #000;
+	margin:0;
+} 
+.debug-on-wrapper .domain-list li:nth-child(odd){
+	background: #ece7de;
+
+}
+.debug-on-wrapper .domain-list li:nth-child(even){
+	background: #fffefd;
+
+}
