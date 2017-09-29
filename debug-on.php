@@ -12,7 +12,7 @@
 // make sure it's not accessed directly
 defined( 'ABSPATH' ) or die( 'You are not going any further!' );
 
-include ('class-bebug-on-menu.php'); // dependenci
+include ('class-debug-on-menu.php'); // dependenci
 
 Class DebugOn{
 
@@ -57,7 +57,7 @@ Class DebugOn{
 		wp_enqueue_style('do-font-awesome', plugin_dir_url( __FILE__ ). 'views/css/font-awesome.min.css');
 	}
 
-	
+}
 
 // Create an instance of our class to kick off the whole thing
 $debugOn = new DebugOn();

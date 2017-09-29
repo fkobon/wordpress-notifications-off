@@ -7,7 +7,7 @@ Class DebugOnMenu{
 	}
 
 	public function create_menu() {
-		add_menu_page('Debug On Plugin','Debug On','administrator', 'menu-domain-home','','dashicons-admin-site');
+		add_menu_page('Debug On Plugin','Debug On','administrator', 'menu-domain-home','','dashicons-clipboard');
 
 		add_submenu_page( 'menu-domain-home', 'Settings', 'Domain Monitor settings',
 			'manage_options', 'menu-domain-home', array( $this, "menu_domain_home"));
