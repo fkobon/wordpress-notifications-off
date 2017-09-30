@@ -16,7 +16,7 @@ This plugin allows you to easily turn off and on notifications in WordPress dash
 ### Manual
 
 1. Download theme by using "Download zip" button on the right side and unzip it.
-2. Upload the **notifications-off** folder to the **/wp-content/plugins/** directory
+2. Unzip and upload the **wordpress-notifications-off-master.zip** file to the **/wp-content/plugins/** directory
 3. Activate the Plugin through the Plugins menu in WordPress
  
 ### WordPress Admin Panel
