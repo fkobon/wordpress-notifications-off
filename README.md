@@ -8,7 +8,7 @@ This plugin allows you to easily turn off and on notifications in WordPress dash
 [![notifications_off_wordpress_plugin-1.png](https://s6.postimg.org/8ihnig44h/notifications_off_wordpress_plugin-1.png)](https://postimg.org/image/8v91omme5/)
 
 ### ...or turn them on
-[![notifications_off_wordpress_plugin-2.png](https://s6.postimg.org/e7xw2raap/notifications_off_wordpress_plugin-2.png)](https://postimg.org/image/e7xw2raal/)
+[![notifications_off_wordpress_plugin-2.png](https://s6.postimg.org/h3az9meap/notifications_off_wordpress_plugin-2.png)](https://postimg.org/image/8l1j5a7rx/)
 
 ## Installation
 
