@@ -106,6 +106,9 @@ Class NotificationsOff{
 			if (current_user_can('update_core')) {
 		        remove_action( 'admin_notices', 'update_nag', 3 );
 				remove_action( 'network_admin_notices', 'update_nag', 3 );
+
+				// if all the above fail, remove the notices section via css
+				echo "<style> #wpbody-content .notice, .update-nag , .error, .updated{ display:none !important; } </style>";
     		}
 		}elseif ($notifications_status === 'on') {
 			// do nothing
