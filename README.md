@@ -26,7 +26,7 @@ This plugin allows you to easily turn off and on notifications in WordPress dash
 4. Choose the **Notifications Off**
 5. Click on **Install Now**
 
-## License and credits
+## License
 
 The plugin is released for free under the terms of the GNU General Public License version 2
 and some parts under their respective licenses.
@@ -36,8 +36,8 @@ The theme is offered free of charge. If someone asked money for it, someone just
 
 Unless otherwise specified, all the theme files, scripts and images are licensed under [GNU General Public License version 2](http://github.com/samuelguebo/notifications-off/LICENSE).
 
-**External scripts are included.:**
-- [jQuery UI Switch Button](olance.github.io/jQuery-switchButton) by Olivier Lance
+### Credits
+- [jQuery UI Switch Button](olance.github.io/jQuery-switchButton) by Olivier Lance, used for the switching feature
 
 
 # Contributors
