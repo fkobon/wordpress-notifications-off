@@ -41,7 +41,6 @@ Class NotificationsOff{
 		add_action( "admin_head", array( $this, "no_hide_notifications") );
 
 		add_action("wp_ajax_no_switch", array( $this, "no_switch")) ;
-		register_uninstall_hook( __FILE__, array($this, "no_uninstall" ));
 
 		
 		// setting up the menu
@@ -137,11 +136,7 @@ Class NotificationsOff{
 		if (FALSE === get_option('no_notifications_status')) {
 			add_option('no_notifications_status', 'off');
 		}
-	}
-
-	public function no_uninstall(){
-		delete_option( 'no_notifications_status' );
-	}		
+	}	
 
 }
 
